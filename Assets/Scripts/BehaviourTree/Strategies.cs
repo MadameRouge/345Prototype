@@ -37,6 +37,7 @@ namespace BehavTree
 
             var target = patrolPoints[currentIndex];
             agent.SetDestination(target.position);
+            agent.updateRotation = false;
             //entity.LookAt(target);
 
             if (isPathCalculated && agent.remainingDistance < 0.1f)
