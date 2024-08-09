@@ -33,6 +33,7 @@ namespace BehavTree
             if (currentIndex == patrolPoints.Count)
             {
                 return Node.Status.Sucess;
+                Debug.Log("reached location");
             }
 
             var target = patrolPoints[currentIndex];
@@ -40,7 +41,7 @@ namespace BehavTree
             agent.updateRotation = false;
             //entity.LookAt(target);
 
-            if (isPathCalculated && agent.remainingDistance < 0.1f)
+            if (isPathCalculated && agent.remainingDistance <= 0.1f)
             {
                 currentIndex++;
                 isPathCalculated = false;
